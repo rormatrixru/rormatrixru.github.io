@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).on('change', 'input', function(){
+                var count = 0;
+                var res = "nil";
+                $('input:checked').each(function(i){
+                    count = parseInt(count,10);
+                    count = count + parseInt(this.value,10);
+                });
+                if (count <= 25) {
+                    res = "слабенько… очень слабенько… зато сколько интересного впереди!";
+                } else if (count > 25 && count <= 52) {
+                    res = "ты уже кое-что знаешь и можешь. Начальная база есть, но еще многое предстоит узнать";
+                } else if (count > 52 && count <= 78) {
+                    res = "ты обладаешь хорошими знаниями. не все идеально, но уже есть что показать и чем похвалиться. не останавливайся, и будешь мега-крут!";
+                } else if (count > 78 && count <= 102) {
+                    res = "ты крут. без сомнений. это успех.";
+                } else {
+                    res = "что-то пошло не так :(";
+                }
+                $('#result').html('<h3>'+count+'</h3>'+'<p>'+res+'</p>');
+            });
+        </script>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.material.init();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Матрица компетенций Ruby on Rails разработчика</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <table class="table table-striped table-hover ">
+                                    <tbody>
+                                        <tr><td colspan="3" class="center"><b>Frontend</b></td></tr>
+                                        <tr><td colspan="3" class="center"><b>Html,css</b></td></tr>
+                                        <tr>
+                                            <td><input id="q1-1" type="radio" value="2" name="q1"><label for="q1-1">знаю базовые вещи, могу подправить верстку</label></td>
+                                            <td>могу сверстать отдельные части страниц<br><input id="q1-2" type="radio" value="4" name="q1"></td>
+                                            <td>могу сверстать весь проект (корректно будет отображаться во всех браузерах)<br><input id="q1-3" type="radio" value="6" name="q1"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Haml, slim, coffee, sass, less (что либо из)… </b></td></tr>
+                                        <tr>
+                                            <td>знаю, что это и зачем используется. сам лично не использую<br><input id="q2-1" type="radio" value="2" name="q2"></td>
+                                            <td>знаю, что это. использую в проекте. иногда приходится пользоваться конверторами (даже для небольшого кода)<br><input id="q2-2" type="radio" value="4" name="q2"></td>
+                                            <td>использую в проекте, пользуясь различными плюшками (например, миксины)<br><input id="q2-3" type="radio" value="6" name="q2"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>JS, jquery и различные фреймворки</b></td></tr>
+                                        <tr>
+                                            <td>знаю базовые вещи, могу подправить что есть<br><input id="q3-1" type="radio" value="2" name="q3"></td>
+                                            <td>могу написать код для отдельных частей функционала. <br><input id="q3-2" type="radio" value="4" name="q3"></td>
+                                            <td>могу полностью написать весь js для проекта (если надо будет)<br><input id="q3-3" type="radio" value="6" name="q3"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Testing</b></td></tr>
+                                        <tr>
+                                            <td>Понимание разницы между TDD и BDD, могу написать простенький тест. Но в проекте оно как-то не задалось<br><input id="q4-1" type="radio" value="2" name="q4"></td>
+                                            <td>Пишу тесты (unit), стараюсь тестировать по-максимуму<br><input id="q4-2" type="radio" value="4" name="q4"></td>
+                                            <td>знаю, что тестировать, как и зачем<br><input id="q4-3" type="radio" value="6" name="q4"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>DB</b></td></tr>
+                                        <tr><td colspan="3" class="center"><b>SQL</b></td></tr>
+                                        <tr>
+                                            <td>Знаю чуток SQL (select * from users)<br><input id="q5-1" type="radio" value="2" name="q5"></td>
+                                            <td>Умею составлять запросы различной сложности<br><input id="q5-2" type="radio" value="4" name="q5"></td>
+                                            <td>Процедуры, функции, тригеры, индексы — знаю!<br><input id="q5-3" type="radio" value="6" name="q5"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>NoSQL</b></td></tr>
+                                        <tr>
+                                            <td>знаю разницу с SQL, основные типы<br><input id="q6-1" type="radio" value="2" name="q6"></td>
+                                            <td>умею использовать в реальном проекте<br><input id="q6-2" type="radio" value="4" name="q6"></td>
+                                            <td>могу проконсультировать по этой теме<br><input id="q6-3" type="radio" value="6" name="q6"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Deploy</b></td></tr>
+                                        <tr>
+                                            <td>Могу настроить сервер с помощью опытных разработчиков и гугла, методом тыка и плясками с бубном<br><input id="q7-1" type="radio" value="2" name="q7"></td>
+                                            <td>Могу настроить сервер, но не на уровне: ребят, да тут же все просто<br><input id="q7-2" type="radio" value="4" name="q7"></td>
+                                            <td>Могу самостоятельно настроить сервер, знаю различие в настройках и конфигурациях<br><input id="q7-3" type="radio" value="6" name="q7"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Rvm, rubygems, bundler...</b></td></tr>
+                                        <tr>
+                                            <td>С чужой помощью или тем же бубном ставлю необходимое для работы (rvm, ruby, rails.....)<br><input id="q8-1" type="radio" value="2" name="q8"></td>
+                                            <td>Знаю, как все ставить, но периодически вылазят ошибки, с которыми не понятно, что делать<br><input id="q8-2" type="radio" value="4" name="q8"></td>
+                                            <td>Да что там — пару команд…<br><input id="q8-3" type="radio" value="6" name="q8"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Patterns</b></td></tr>
+                                        <tr>
+                                            <td>Нууу… эм… слышал. Хорошая штука<br><input id="q9-1" type="radio" value="2" name="q9"></td>
+                                            <td>Знаю основные паттерны, умею применять на практике, но сложно понять по реальной задаче, где какой нужен<br><input id="q" type="radio" value="4" name="q9-2"></td>
+                                            <td>Активно применяю и использую, могу рассказать для чего какой паттерн предназначен<br><input id="q9-3" type="radio" value="6" name="q9"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>What do you know about RoR?</b></td></tr>
+                                        <tr>
+                                            <td>Я его использую<br><input id="q10-1" type="radio" value="2" name="q10"></td>
+                                            <td>Я знаю очередность запуска файлов, могу использовать компоненты rails отдельно друг от друга<br><input id="q10-2" type="radio" value="4" name="q10"></td>
+                                            <td>Я знаю, как он устроен, так сказать внутренности rails<br><input id="q10-3" type="radio" value="6" name="q10"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Caching</b></td></tr>
+                                        <tr>
+                                            <td>знаю, что это и зачем. лично не использовал<br><input id="q11-1" type="radio" value="2" name="q11"></td>
+                                            <td>знаю, что это и зачем и использую (использовал) в проекте<br><input id="q11-2" type="radio" value="4" name="q11"></td>
+                                            <td>хорошо понимаю принцип работы, преимущества, знаю, что и как лучше использовать<br><input id="q11-3" type="radio" value="6" name="q11"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Queue</b></td></tr>
+                                        <tr>
+                                            <td>знаю, что это и зачем. лично не использовал<br><input id="q12-1" type="radio" value="2" name="q12"></td>
+                                            <td>знаю, что это и зачем и использую в проекте<br><input id="q12-2" type="radio" value="4" name="q12"></td>
+                                            <td>хорошо понимаю принцип работы, преимущества, знаю, что и как лучше использовать<br><input id="q12-3" type="radio" value="6" name="q12"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Metaprogramming</b></td></tr>
+                                        <tr>
+                                            <td>Знаю, что это. На практике не применяю<br><input id="q13-1" type="radio" value="2" name="q13"></td>
+                                            <td>Знаю базовые вещи<br><input id="q13-2" type="radio" value="4" name="q13"></td>
+                                            <td>Знаю на продвинутом уровне<br><input id="q13-3" type="radio" value="6" name="q13"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Git</b></td></tr>
+                                        <tr>
+                                            <td>Знаю основы<br><input id="q14-1" type="radio" value="2" name="q14"></td>
+                                            <td>Хорошо работаю с git, но иногда возникают проблемы, которые приходится гуглить<br><input id="q14-2" type="radio" value="4" name="q14"></td>
+                                            <td>Знаю на продвинутом уровне (думаю, как git). Понимаю прекрасно принцип работы, слияние, изменение истории, как родные, в общем<br><input id="q14-3" type="radio" value="6" name="q14"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Writing the code</b></td></tr>
+                                        <tr>
+                                            <td>пишу, как получится, логика в контроллере.  Если код не нужен — я его закоментирую — вдруг пригодится. иногда подумываю о рефакторинге…<br><input id="q15-1" type="radio" value="2" name="q15"></td>
+                                            <td>стараюсь держать логику в модели, драить свой код. методы не большие, код понятный при чтении другими программистами<br><input id="q15-2" type="radio" value="4" name="q15"></td>
+                                            <td>код чистый. использую различные паттерны (знаю когда и что лучше), ну не код, а загляденье :)<br><input id="q15-3" type="radio" value="6" name="q15"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>Planning, estimating</b></td></tr>
+                                        <tr>
+                                            <td>провожу планирование своих задач и эстимейты. предварительные эстимейты часто не сходятся с реальным временем выполнения<br><input id="q16-1" type="radio" value="2" name="q16"></td>
+                                            <td>могу запланировать и оценить систему средней сложности. в реальности все слодится по плану (с небольшой погрешностью)<br><input id="q16-2" type="radio" value="4" name="q16"></td>
+                                            <td>могу запланировать и оценить сложный проект (для себя и команды), распределить задачи. все сходится по плану (с небольшой погрешностью)<br><input id="q16-3" type="radio" value="6" name="q16"></td>
+                                        </tr>
+                                        <tr><td colspan="3" class="center"><b>RoR news</b></td></tr>
+                                        <tr>
+                                            <td>Читаю некоторые посты… на русском… если кто ссылку кинет…<br><input id="q17-1" type="radio" value="2" name="q17"></td>
+                                            <td>Периодически пробивает на чтение/просмотр новостей в мире RoR<br><input id="q17-2" type="radio" value="4" name="q17"></td>
+                                            <td>Слушаю подкасты/читаю свежие новости, в общем что ни на есть в курсе<br><input id="q17-3" type="radio" value="6" name="q17"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div><p>Выбери вариант ответа в зависимости от своих навыков. Первый столбец оценивается в 2 балла, второй в 4 и третий в 6. Сумма баллов и оценка автоматически генерируется ниже:</p></div>
+                            <div class="center" id="result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer class="footer">
+      <div class="container">
+        <span>Матрица и оценки взяты из <a href="http://habrahabr.ru/company/itbursa/blog/220037/">статьи.</a> Спасибо <a href="http://rubybursa.com/">rubybursa.com</a></span>
+        <span>Наговнокодил <a href="https://doam.ru">madbrain</a> в 2015 году </span>
+      </div>
+    </footer>
+</html>
+
+
