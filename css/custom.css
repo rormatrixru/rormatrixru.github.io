@@ -14,9 +14,8 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #673BB7;
+  background-color: #4286F5;
 }
-
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
@@ -29,19 +28,30 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
-
 .navbar-default.navbar {
-  background-color: #673BB7;
+  background-color: #4286F5;
 }
-
 .center {
   text-align: center;
 }
-
-td {
-  text-align: center;
+.borderless td {
+  border-top: none;
+  border: none;
 }
-
 input {
   display: none;
+}
+.super-btn {
+  white-space: normal;
+  text-transform: none;
+}
+.right-panel {
+  max-width: 360px;
+}
+.super-p {
+  color: white;
+}
+.super-p a, a:hover, a:visited, a:link, a:active {
+  color: black;
+  text-decoration: none;
 }
