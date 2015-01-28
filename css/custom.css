@@ -50,6 +50,7 @@ input {
 }
 .super-p {
   color: white;
+  margin-top: 20px;
 }
 .super-p a, a:hover, a:visited, a:link, a:active {
   color: black;

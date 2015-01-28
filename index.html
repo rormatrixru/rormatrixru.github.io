@@ -6,31 +6,9 @@
         <link href="css/material-wfont.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script type="text/javascript">
-            $(document).on('change', 'input', function(){
-                var count = 0;
-                var res = "nil";
-                $('input:checked').each(function(i){
-                    count = parseInt(count,10);
-                    count = count + parseInt(this.value,10);
-                });
-                if (count <= 25) {
-                    res = "слабенько… очень слабенько… зато сколько интересного впереди!";
-                } else if (count > 25 && count <= 52) {
-                    res = "ты уже кое-что знаешь и можешь. Начальная база есть, но еще многое предстоит узнать";
-                } else if (count > 52 && count <= 78) {
-                    res = "ты обладаешь хорошими знаниями. не все идеально, но уже есть что показать и чем похвалиться. не останавливайся, и будешь мега-крут!";
-                } else if (count > 78 && count <= 102) {
-                    res = "ты крут. без сомнений. это успех.";
-                } else {
-                    res = "что-то пошло не так :(";
-                }
-                $('#result').html('<h3>'+count+'</h3>'+'<p>'+res+'</p>');
-            });
-        </script>
+        <script src="js/custom.js"></script>
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
         <script src="js/ripples.min.js"></script>
         <script src="js/material.min.js"></script>
         <script>
@@ -174,7 +152,7 @@
     </body>
     <footer class="footer">
       <div class="container">
-        <p class="super-p">Матрица и оценки взяты из <a href="http://habrahabr.ru/company/itbursa/blog/220037/">статьи.</a> Спасибо <a href="http://rubybursa.com/">rubybursa.com</a>. Слепил <a href="https://doam.ru">madbrain</a> в 2015 году</p>
+        <p class="super-p center">Матрица и оценки взяты из <a href="http://habrahabr.ru/company/itbursa/blog/220037/">статьи.</a> Спасибо <a href="http://rubybursa.com/">rubybursa.com</a>. Слепил <a href="https://doam.ru">madbrain</a> в 2015 году c использованием <a href="http://fezvrasta.github.io/bootstrap-material-design/">bootstrap-material</a>, <a href="http://getbootstrap.com/">bootstrap</a> и <a href="http://jquery.com/">jquery</a></p>
       </div>
     </footer>
 </html>
