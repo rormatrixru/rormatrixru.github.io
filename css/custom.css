@@ -34,10 +34,6 @@ body {
 .center {
   text-align: center;
 }
-.borderless td {
-  border-top: none;
-  border: none;
-}
 input {
   display: none;
 }
@@ -55,4 +51,10 @@ input {
 .super-p a, a:hover, a:visited, a:link, a:active {
   color: black;
   text-decoration: none;
+}
+label {
+  font-weight: 400;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+  border-top: none;
 }
